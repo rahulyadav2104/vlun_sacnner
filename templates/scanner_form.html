@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Vulnerability Scanner</title>
+    {% load static %}
+
+  
+
+    <style>
+        /* Smooth Page Load Transition */
+        body {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.5s ease-in-out forwards;
+            background-color: #0a0a0a; /* Dark background */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding-top: 1px;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        /* Form Container */
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Input Fields */
+        input[type="text"], button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="text"] {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+        }
+
+        button {
+            background: #ff4f4f;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff2323;
+        }
+
+        /* Image Transition */
+        .fade-in-image {
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeInImage 1.5s ease-in-out 0.5s forwards;
+            width: 200px;
+            margin-top: 20px;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <!-- Scanner Logo (Base64 Example) -->
+    <img src="{% static 'images/spider.png' %}" alt="Scanner Logo" class="fade-in-image">
+
+    <!-- Scanner Form -->
+    <div class="form-container">
+        <h2>Web Vulnerability Scanner</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="url" name="url" required placeholder="Enter target URL" class="border border-green-400 bg-transparent text-white">
+            <button type="submit">Scan</button>
+        </form>
+        
+    
+        
+    </div>
+
+</body>
+</html>

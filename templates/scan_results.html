@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Results</title>
+
+    <style>
+
+        .back {
+            background-color:rgb(61, 201, 26) ;
+            padding: 100px;
+            justify-items:center;
+            align-items: center;
+
+
+        }
+        .h2 {
+            background-color: greenyellow;
+        }
+        
+    </style>
+</head>
+<div class="back">
+<body>
+    <h2>Scan Results for {{ url }}</h2>
+    <ul>
+        {% for issue in issues %}
+            <li>{{ issue }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">🔄 Scan Another Website</a>
+</body>
+</div>
+</html>
